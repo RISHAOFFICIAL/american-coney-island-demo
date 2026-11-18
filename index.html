@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>American Coney Island | Detroit's Original Coney Dog Since 1917</title>
+<meta name="description" content="American Coney Island has been serving Detroit's original coney dogs since 1917. Family-owned, downtown Detroit. Chili, mustard, onions on a steamed bun.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --red: #C1272D;
+  --red-dark: #9B1B20;
+  --cream: #FFF8F0;
+  --cream-dark: #F5EDE3;
+  --brown: #2B1B12;
+  --brown-light: #5C4033;
+  --gold: #E8A317;
+  --white: #FFFFFF;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--brown);
+  background: var(--cream);
+  line-height: 1.6;
+}
+h1, h2, h3, .logo-text {
+  font-family: 'Oswald', 'Arial Narrow', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+a { color: var(--red); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* Header */
+header {
+  background: var(--brown);
+  color: var(--white);
+  padding: 0.75rem 1.25rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+.header-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+.logo-text {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.03em;
+}
+.logo-text span { color: var(--gold); }
+nav { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+nav a {
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+nav a:hover { color: var(--gold); text-decoration: none; }
+.header-phone {
+  font-weight: 700;
+  color: var(--gold);
+  font-size: 1rem;
+  white-space: nowrap;
+}
+
+/* Hero */
+.hero {
+  background: linear-gradient(rgba(43,27,18,0.55), rgba(43,27,18,0.65)), url('https://images.unsplash.com/photo-1612392062798-ebaf4a5b9b1e?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: var(--white);
+  text-align: center;
+  padding: 5rem 1.25rem 4rem;
+}
+.hero h1 {
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  line-height: 1.05;
+  margin-bottom: 0.5rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+}
+.hero .tagline {
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 600;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+.hero p {
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 1.75rem;
+  opacity: 0.95;
+}
+.hero-badges {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.badge {
+  background: rgba(255,255,255,0.15);
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 50px;
+  padding: 0.4rem 1rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+}
+.btn {
+  display: inline-block;
+  background: var(--red);
+  color: var(--white);
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.85rem 2rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn:hover { background: var(--red-dark); text-decoration: none; }
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--white);
+  margin-left: 0.75rem;
+}
+.btn-outline:hover { background: rgba(255,255,255,0.15); }
+
+/* Sections */
+section { padding: 3.5rem 1.25rem; }
+.section-inner { max-width: 1100px; margin: 0 auto; }
+.section-title {
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: var(--brown);
+}
+.section-subtitle {
+  text-align: center;
+  color: var(--brown-light);
+  font-size: 1.1rem;
+  margin-bottom: 2.5rem;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.divider {
+  width: 60px;
+  height: 4px;
+  background: var(--gold);
+  margin: 0 auto 2rem;
+  border-radius: 2px;
+}
+
+/* About */
+.about { background: var(--white); }
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: center;
+}
+.about-grid img {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.about-text h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--red);
+}
+.about-text p { margin-bottom: 1rem; color: var(--brown-light); }
+.stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+.stat { text-align: center; }
+.stat-number {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--red);
+  line-height: 1;
+}
+.stat-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--brown-light);
+}
+
+/* Menu */
+.menu { background: var(--cream-dark); }
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.menu-card {
+  background: var(--white);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: transform 0.2s;
+}
+.menu-card:hover { transform: translateY(-4px); }
+.menu-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+.menu-card-body { padding: 1.25rem; }
+.menu-card-body h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.menu-card-body .price {
+  color: var(--red);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.menu-card-body p {
+  color: var(--brown-light);
+  font-size: 0.95rem;
+}
+.menu-card-body .tag {
+  display: inline-block;
+  background: var(--gold);
+  color: var(--brown);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* Reviews */
+.reviews { background: var(--white); }
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.review-card {
+  background: var(--cream);
+  border-radius: 10px;
+  padding: 1.5rem;
+  border-left: 4px solid var(--gold);
+}
+.review-stars { color: var(--gold); font-size: 1.2rem; margin-bottom: 0.5rem; letter-spacing: 0.1em; }
+.review-card p { font-style: italic; color: var(--brown-light); margin-bottom: 0.75rem; }
+.review-author { font-weight: 700; font-size: 0.9rem; color: var(--brown); }
+.review-source { font-size: 0.8rem; color: #888; }
+.rating-summary {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.rating-summary .big-rating {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--red);
+  line-height: 1;
+}
+.rating-summary .stars { color: var(--gold); font-size: 1.4rem; letter-spacing: 0.1em; }
+
+/* Visit */
+.visit { background: var(--brown); color: var(--white); }
+.visit .section-title { color: var(--white); }
+.visit .section-subtitle { color: rgba(255,255,255,0.8); }
+.visit-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+.visit-card {
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 1.75rem;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+.visit-card h3 {
+  color: var(--gold);
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+.visit-card p, .visit-card li {
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 0.5rem;
+}
+.visit-card ul { list-style: none; }
+.visit-card ul li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  padding: 0.4rem 0;
+}
+.visit-card a { color: var(--gold); }
+.visit-card a:hover { color: var(--white); }
+
+/* CTA */
+.cta {
+  background: var(--red);
+  color: var(--white);
+  text-align: center;
+  padding: 3rem 1.25rem;
+}
+.cta h2 { font-size: clamp(1.6rem, 4vw, 2.2rem); margin-bottom: 0.5rem; }
+.cta p { font-size: 1.1rem; margin-bottom: 1.5rem; opacity: 0.95; }
+.cta .btn {
+  background: var(--white);
+  color: var(--red);
+}
+.cta .btn:hover { background: var(--cream); }
+
+/* Footer */
+footer {
+  background: #1A0F0A;
+  color: rgba(255,255,255,0.7);
+  text-align: center;
+  padding: 2rem 1.25rem;
+  font-size: 0.9rem;
+}
+footer a { color: var(--gold); }
+.demo-note {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.45);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-grid, .visit-grid { grid-template-columns: 1fr; }
+  .about-grid img { height: 240px; }
+  nav { gap: 1rem; }
+  .header-phone { display: none; }
+  .btn-outline { margin-left: 0; margin-top: 0.75rem; }
+  .hero { padding: 3.5rem 1.25rem 3rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="logo-text">American <span>Coney Island</span></div>
+    <nav>
+      <a href="#about">Our Story</a>
+      <a href="#menu">Menu</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#visit">Visit Us</a>
+    </nav>
+    <a href="tel:+13139617758" class="header-phone">(313) 961-7758</a>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>Detroit's Original<br>Coney Dog Since 1917</h1>
+  <p class="tagline">Chili. Mustard. Onions. Steamed Bun. Perfection.</p>
+  <p>Family-owned for over a century. One counter, one recipe, one legendary Detroit institution on Lafayette Boulevard.</p>
+  <div class="hero-badges">
+    <span class="badge">Est. 1917</span>
+    <span class="badge">4.4 Stars &middot; 1,861 Reviews</span>
+    <span class="badge">Family Owned</span>
+    <span class="badge">Downtown Detroit</span>
+  </div>
+  <a href="#menu" class="btn">See the Menu</a>
+  <a href="#visit" class="btn btn-outline">Find Us</a>
+</section>
+
+<section class="about" id="about">
+  <div class="section-inner">
+    <h2 class="section-title">A Century of Detroit Flavor</h2>
+    <div class="divider"></div>
+    <div class="about-grid">
+      <img src="https://images.unsplash.com/photo-1619740455993-9e612b1af08a?auto=format&fit=crop&w=900&q=80" alt="Chili dog with mustard and onions">
+      <div class="about-text">
+        <h3>From Greece to Lafayette Boulevard</h3>
+        <p>In 1903, Constantine "Gust" Keros immigrated to Detroit from Greece. Fourteen years later, in 1917, he opened a small hot dog counter on West Lafayette Boulevard, serving chili-covered hot dogs made with Dearborn Sausage and his own secret recipe chili sauce.</p>
+        <p>More than a century later, the Keros family still runs the counter. Through the auto boom, the Great Depression, World Wars, and Detroit's renaissance, American Coney Island has stayed true to one simple purpose: the perfect coney dog.</p>
+        <p>We are Detroit's original coney island, and we are proud to still be here, still family-owned, still serving the same legendary dog.</p>
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-number">109</div>
+            <div class="stat-label">Years in Business</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">4</div>
+            <div class="stat-label">Generations</div>
+          </div>
+          <div class="stat">
+            <div class="stat-number">2</div>
+            <div class="stat-label">Locations</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="menu" id="menu">
+  <div class="section-inner">
+    <h2 class="section-title">The Menu</h2>
+    <p class="section-subtitle">Simple. Classic. Done right for over 100 years. Every coney is made with a Dearborn Sausage hot dog, our secret recipe chili, fine mustard, and sweet onions on a steamed bun.</p>
+    <div class="divider"></div>
+    <div class="menu-grid">
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1612392062798-ebaf4a5b9b1e?auto=format&fit=crop&w=600&q=80" alt="Classic coney dog">
+        <div class="menu-card-body">
+          <h3>Coney Dog <span class="price">$5.05</span></h3>
+          <p>The original. Dearborn Sausage hot dog topped with our secret recipe chili, mustard, and onions on a steamed bun.</p>
+          <span class="tag">The Classic</span>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1565299507177-b0ac66763828?auto=format&fit=crop&w=600&q=80" alt="Loose burger">
+        <div class="menu-card-body">
+          <h3>Loose Burger <span class="price">$5.75</span></h3>
+          <p>Seasoned ground beef packed in a coney bun with chili, mustard, and onions. A Detroit favorite.</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1599599810769-bcde5a160d32?auto=format&fit=crop&w=600&q=80" alt="American Special coney">
+        <div class="menu-card-body">
+          <h3>American Special <span class="price">$6.45</span></h3>
+          <p>Our signature. A coney dog piled high with spiced ground beef, chili, mustard, and onions.</p>
+          <span class="tag">House Favorite</span>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?auto=format&fit=crop&w=600&q=80" alt="Chili cheese fries">
+        <div class="menu-card-body">
+          <h3>Chili Cheese Fries <span class="price">$6.80</span></h3>
+          <p>Golden fries smothered in our famous chili and melted cheese. The perfect side to any coney.</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1529006557810-274b9b2fc783?auto=format&fit=crop&w=600&q=80" alt="Gyro">
+        <div class="menu-card-body">
+          <h3>Gyro <span class="price">$9.50</span></h3>
+          <p>A nod to our Greek roots. Seasoned gyro meat, tzatziki, tomato, and onion in warm pita.</p>
+        </div>
+      </div>
+
+      <div class="menu-card">
+        <img src="https://images.unsplash.com/photo-1606313564200-e75b5e30476c?auto=format&fit=crop&w=600&q=80" alt="Brownie dessert">
+        <div class="menu-card-body">
+          <h3>Rockslide Brownie <span class="price">$5.25</span></h3>
+          <p>Warm chocolate brownie to finish off your meal. The sweet ending to a Detroit classic.</p>
+        </div>
+      </div>
+
+    </div>
+    <p style="text-align:center; margin-top: 2rem; color: var(--brown-light);">Also available: bowls of chili, french fries, sodas, coffee, and more. Add cheese or extra chili to any item.</p>
+  </div>
+</section>
+
+<section class="reviews" id="reviews">
+  <div class="section-inner">
+    <h2 class="section-title">What Detroit Says</h2>
+    <div class="divider"></div>
+    <div class="rating-summary">
+      <div class="big-rating">4.4</div>
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p style="color: var(--brown-light); margin-top: 0.25rem;">Based on 1,861 Google reviews</p>
+    </div>
+    <div class="review-grid">
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"A Detroit institution. The coney dogs here are the real deal. You can taste over 100 years of history in every bite."</p>
+        <div class="review-author">Google Reviewer</div>
+        <div class="review-source">Google Reviews</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Stopped in on a road trip and it lived up to every bit of the hype. The chili is incredible, the atmosphere is pure Detroit."</p>
+        <div class="review-author">Google Reviewer</div>
+        <div class="review-source">Google Reviews</div>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Been coming here since I was a kid. My grandpa brought my dad, my dad brought me, now I bring my kids. That's what this place is."</p>
+        <div class="review-author">Google Reviewer</div>
+        <div class="review-source">Google Reviews</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="visit" id="visit">
+  <div class="section-inner">
+    <h2 class="section-title">Visit Us</h2>
+    <p class="section-subtitle">Two locations. One legendary coney dog.</p>
+    <div class="divider"></div>
+    <div class="visit-grid">
+      <div class="visit-card">
+        <h3>Detroit (Original)</h3>
+        <p><strong>114 W Lafayette Blvd</strong><br>Detroit, MI 48226</p>
+        <p>Phone: <a href="tel:+13139617758">(313) 961-7758</a><br>
+        Email: <a href="mailto:eat@americanconeyisland.com">eat@americanconeyisland.com</a></p>
+        <p><a href="https://maps.google.com/?q=114+W+Lafayette+Blvd,+Detroit,+MI+48226" target="_blank" rel="noopener">Get Directions &rarr;</a></p>
+        <h3 style="margin-top: 1.5rem;">Hours</h3>
+        <ul>
+          <li><span>Monday - Thursday</span><span>10 AM - 7 PM</span></li>
+          <li><span>Friday</span><span>10 AM - 12 AM</span></li>
+          <li><span>Saturday</span><span>11 AM - 12 AM</span></li>
+          <li><span>Sunday</span><span>11 AM - 7 PM</span></li>
+        </ul>
+      </div>
+      <div class="visit-card">
+        <h3>Las Vegas</h3>
+        <p>Can't make it to Detroit? Our second location brings the same legendary coney dog to Las Vegas.</p>
+        <p>The same secret recipe chili. The same Dearborn Sausage hot dogs. The same family tradition, over 2,000 miles from Lafayette Boulevard.</p>
+        <p style="margin-top: 1.5rem;">Whether you are a Detroiter who moved west or a Vegas local discovering Detroit's most famous food, come taste a century of flavor.</p>
+        <p><a href="tel:+13139617758">Call Detroit for Las Vegas details &rarr;</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Hungry? Come Get a Coney.</h2>
+  <p>We have been waiting 109 years to serve you.</p>
+  <a href="https://maps.google.com/?q=114+W+Lafayette+Blvd,+Detroit,+MI+48226" target="_blank" rel="noopener" class="btn">Get Directions</a>
+  <a href="tel:+13139617758" class="btn btn-outline" style="border-color: white; color: white; margin-left: 0.75rem;">Call (313) 961-7758</a>
+</section>
+
+<footer>
+  <p><strong>American Coney Island</strong><br>
+  114 W Lafayette Blvd, Detroit, MI 48226<br>
+  (313) 961-7758 &middot; <a href="mailto:eat@americanconeyisland.com">eat@americanconeyisland.com</a></p>
+  <p style="margin-top: 0.75rem;">Family owned and operated since 1917.</p>
+  <p class="demo-note">Demo redesign by Lexis Sapphire Studio. This is a concept website created to demonstrate a modern redesign. Not affiliated with American Coney Island.</p>
+</footer>
+
+</body>
+</html>
